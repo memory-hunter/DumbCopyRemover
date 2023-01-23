@@ -1,8 +1,8 @@
 # mld-tools
 
-Simple Python script for:
+Simple Python script to work with iMelody `.mld` files. The script can:
 - [x] Removing copy protection from `.mld` files.
-- [] Converting `.mld` files to `.mid` files.
+- [ ] Converting `.mld` files to `.mid` files.
  
  ## Installation
 
