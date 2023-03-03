@@ -1,15 +1,15 @@
-# mld-tools
+# dumbphone-audio-tools
 
-Simple Python script to work with iMelody `.mld` files. The script can:
-- [x] Removing copy protection from `.mld` files.
-- [ ] Converting `.mld` files to `.mid` files.
+Simple Python script to work with `.mld`, `.mmf`. The script can:
+- [x] Remove copy protection.
+- [ ] Converting other specific formats to `.mid` for listenability on the PC
  
  ## Installation
 
 First, clone the repository:
 
 ```bash
-git clone git@github.com:memory-hunter/mld-tools.git
+git clone git@github.com:memory-hunter/dumbphone-audio-tools.git
 ```
 
 And then run the following command to install the dependencies.
@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 ## Usage
 ```
-usage: mld-tools [-h] file
+usage: dpat [-h] file
 
 positional arguments:
   file        File to remove copy protection from
