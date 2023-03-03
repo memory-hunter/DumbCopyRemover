@@ -1,8 +1,8 @@
 # dumbphone-audio-tools
 
 Simple Python script to work with `.mld`, `.mmf`. The script can:
-- [x] Remove copy protection.
-- [ ] Converting other specific formats to `.mid` for listenability on the PC
+- [x] Remove copy protection
+- [ ] Convert other specific formats to `.mid` for listenability on the PC
  
  ## Installation
 
