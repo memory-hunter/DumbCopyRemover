@@ -28,7 +28,7 @@ def convert_to_midi(file: str):
 
 if __name__ == "__main__":
     parser = ap.ArgumentParser("dpat.py", description="Remove copy protection from dumbphone audio files")
-    parser.add_argument("file", help="File to remove copy protection from")
+    parser.add_argument("files", nargs="+", help="Files to remove copy protection from")
     args = parser.parse_args()
     
     choice = input("1. Remove DRM\n2. Convert to MIDI (todo)\n")
@@ -37,7 +37,8 @@ if __name__ == "__main__":
         choice = input("Invalid choice. Please try again.\n")
     
     if choice == "1":
-        remove_copy_protection(args.file)
+        for file in args.files:
+            remove_copy_protection(file)
         print("Done!")
         exit()
     elif choice == "2":
