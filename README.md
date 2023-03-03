@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 ## Usage
 ```
-usage: dpat [-h] file
+usage: dpat.py [-h] file
 
 positional arguments:
   file        File to remove copy protection from
