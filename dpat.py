@@ -6,13 +6,21 @@ offsets = {
 }
 
 def remove_copy_protection(file: str):
-    audio_name, format = file.split(".")[-2], file.split(".")[-1]
+    audio_name, \
+    format, \
+    file_root_dir = \
+    file.split(".")[-2].split("\\")[-1], \
+    file.split(".")[-1], \
+    "\\".join(file.split("\\")[:-1])
+
     if format not in offsets.keys():
         raise Exception("Invalid file format")
+    
     with open(file, "rb+") as f:
         data = f.read()
+
     data = data[:offsets[format]] + b'\x00' + data[offsets[format]+1:]
-    with open(audio_name[1:] + "_rmvd." + format, "wb+") as f:
+    with open(file_root_dir + "\\" + audio_name + "_rmvd." + format, "wb+") as f:
         f.write(data)
 
 def convert_to_midi(file: str):
