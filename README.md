@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 ## Usage
 ```
-python dpat.py [-h] files [files ...]
+python dcr.py [-h] files [files ...]
 
 Remove copy protection from dumbphone audio files
 
