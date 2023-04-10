@@ -31,7 +31,7 @@ def remove_copy_protection(file: str):
         f.write(data)
 
 if __name__ == "__main__":
-    parser = ap.ArgumentParser("dpat.py", description="Remove copy protection from dumbphone audio files")
+    parser = ap.ArgumentParser("dcr.py", description="Remove copy protection from dumbphone audio files")
     parser.add_argument("files", nargs="+", help="Files to remove copy protection from")
     args = parser.parse_args()
     
