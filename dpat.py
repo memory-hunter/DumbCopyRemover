@@ -19,7 +19,7 @@ def remove_copy_protection(file: str):
     with open(file, "rb+") as f:
         data = f.read()
 
-    data = data[:offsets[format]] + b'\x00' + data[offsets[format]+1:]
+    data = data[:offsets[format]] + bytes([0x00]) + data[offsets[format] + 1:]
     with open(file_root_dir + "\\" + audio_name + "_rmvd." + format, "wb+") as f:
         f.write(data)
 
