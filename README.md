@@ -1,4 +1,4 @@
-# dumbphone-audio-tools
+# DumbCopyRemover
 
 Simple Python script to work with `.mld`, `.mmf`(so far). The script can remove copy protection to then be able to be converted to other formats using PsmPlayer for example.
  
