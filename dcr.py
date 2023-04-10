@@ -26,7 +26,7 @@ def remove_copy_protection(file: str):
     if offset_keywords[format][0] in data:
         pos = data.find(offset_keywords[format][0]) + offset_keywords[format][1]
     else:
-        raise Exception("No track start found. Is this a valid audio file?")
+        raise Exception("No keyword found for the format. Is this a valid audio file of " + format + "?")
 
     data = data[:pos] + bytes([0x00]) + data[pos + 1:]
     with open(file_root_dir + "\\" + audio_name + "_rmvd." + format, "wb+") as f:
