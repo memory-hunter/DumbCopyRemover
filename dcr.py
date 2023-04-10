@@ -2,11 +2,11 @@ import argparse as ap
 
 # Offset Keywords
 # Each format has copy protection byte, and is located after a certain keyword
-# k:v -> format: (keyword, offset from keyword)
+# k:v -> format: (keyword, offset from keyword beginning)
 
 offset_keywords = {
     'mld': (b'sorc', 6),
-    'mmf': (b'TODO', -1)
+    'mmf': (b'OPDA', -2)
 }
 
 def remove_copy_protection(file: str):
@@ -18,13 +18,15 @@ def remove_copy_protection(file: str):
     "\\".join(file.split("\\")[:-1])
 
     if format not in offset_keywords.keys():
-        raise Exception("Invalid file format")
+        raise Exception("Invalid file format.")
     
     with open(file, "rb+") as f:
         data = f.read()
 
     if offset_keywords[format][0] in data:
-        pos = data.index(offset_keywords[format][0]) + offset_keywords[format][1]
+        pos = data.find(offset_keywords[format][0]) + offset_keywords[format][1]
+    else:
+        raise Exception("No track start found. Is this a valid audio file?")
 
     data = data[:pos] + bytes([0x00]) + data[pos + 1:]
     with open(file_root_dir + "\\" + audio_name + "_rmvd." + format, "wb+") as f:
